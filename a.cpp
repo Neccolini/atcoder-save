@@ -26,7 +26,7 @@ typedef pair<int,int>P;
 #define MAX6 1001001//6
 #define MAX7 10010010//7
 #define SENTINEL 2000000000//9
-//#define INF 1<<30
+#define INF 1<<30
 #define INFTY 1LL<<61
 #define MAX_INT INT_MAX
 #define MAX_LL LLONG_MAX
@@ -46,9 +46,15 @@ if(n&1)res=res*x%mod;
 x=x*x%mod;n>>=1;}return res;}
 inline ll mod_inv(ll x){return mod_pow(x,MOD-2);}
 inline ll mod_div(ll a, ll b){return mod_mul(a,mod_inv(b));}
+struct edge{ll to,cost;};
 //const int dx[4]={1,0,-1,0},dy[4]={0,1,0,-1};
 // vector型から重複を削除 list.erase(unique(ALL(list)),list.end());
 // g++ -o a a.cpp -Wall -lm -std=c++17
 //push_back -> emplace_back
+//using Graph=vector<vector<ll>>;
 
 
+int main(){
+   
+
+}
