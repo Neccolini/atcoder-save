@@ -34,7 +34,7 @@ struct graph{
       }
    }
 
-   bool bellman_ford(ll s){//あってるかな
+   bool bellman_ford(ll s){  //ayashii
        d[s]=0;
        rep(i,V){
            rep(v,V){

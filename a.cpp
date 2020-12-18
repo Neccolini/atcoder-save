@@ -7,15 +7,12 @@ typedef vector<ll>VI;
 typedef pair<int,int>P;
 #define VV(T) vector<vector<T>>
 #define sz(x) int(x.size())
-#define PI 3.1415926535897932384626433832795
 #define rep(i, n) for (ll i = 0; i < (ll)n; i++)
 #define reprev(i,n) for (ll i=(ll)n-1;i>=0;i--)
 #define ALL(a)  (a).begin(),(a).end()
 #define rALL(a) (a).rbegin(),(a).rend()
 #define c_max(a,b) (((ll)a)>((ll)b)?(a):(b))
 #define c_min(a,b) (((ll)a)<((ll)b)?(a):(b))
-#define chmax(x,a) x=c_max(x,a)
-#define chmin(x,a) x=c_min(x,a)
 #define vmax(v) *max_element(ALL(v))
 #define vmin(v) *min_element(ALL(v))
 #define $(x) {cout<<#x<<" = " <<(x)<<endl;}
@@ -34,6 +31,8 @@ typedef pair<int,int>P;
 #define CLR(mat) memset(mat, 0, sizeof(mat))
 inline ll GCD(ll a,ll b){return b?GCD(b,a%b):a;}//最大公約数
 inline ll lcm(ll a,ll b){return a*b/GCD(a,b);}//最小公倍数
+template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
+template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
 template<class T> bool contain(const std::string& s, const T& v) {
    return s.find(v) != std::string::npos;
 }
@@ -47,6 +46,7 @@ x=x*x%mod;n>>=1;}return res;}
 inline ll mod_inv(ll x){return mod_pow(x,MOD-2);}
 inline ll mod_div(ll a, ll b){return mod_mul(a,mod_inv(b));}
 struct edge{ll to,cost;};
+const ll inf=1e18;
 //const int dx[4]={1,0,-1,0},dy[4]={0,1,0,-1};
 // vector型から重複を削除 list.erase(unique(ALL(list)),list.end());
 // g++ -o a a.cpp -Wall -lm -std=c++17
