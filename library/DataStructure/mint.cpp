@@ -88,6 +88,7 @@ template<class T> struct BiCoef {
     }
 };
 
-const int MAX = 501010;
-const int MOD = 1000000007;
+//const int MAX = 501010;
+//const int MOD = 1000000007;
 using mint = Fp<MOD>;
+
