@@ -1,25 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
 using ll = int64_t;
-#define rep(i, n) for (int i = 0; i < (int)n; i++)
 
-const ll M = 10000000000;
+inline ll mod_pow(ll x,ll n,ll mod){
+    ll res=1;
+    while(n>0){
+        if(n&1)res=res*x%mod;
+        x=x*x%mod;
+        n>>=1;
+    }
+    return res;
+}
+
 int main(){
-   int N;cin>>N;
-   string T;cin>>T;
-   bool flag;
-   ll ans = 0;
-   rep(i, 3) {
-      flag = true;
-      ll a = (T.size() + i + 2) / 3;
-      ll add = M - a + 1;
-      rep(j,N){
-         char s = ((i+j)%3==2 ? '0' : '1');
-         flag &= (T[j] == s);
-      }
-      if(flag){
-         ans += add;
-      }
-   }
-   cout<<ans<<endl;
+    ll A,B,C;cin>>A>>B>>C;
+    A%=10;
+    if(A==0 || A==1 || A==5||A==6){
+        cout<<A<<endl;
+        return 0;
+    }
+    if(A==4 || A==9){
+        ll times = mod_pow(B,C,2);
+        if(times==0)times=2;
+        cout<<mod_pow(A,times,10)<<endl;
+        return 0;
+    }
+    if(A==2 || A==3||A==7||A==8){
+        ll times = mod_pow(B, C, 4);
+        if(times==0)times=4;
+        cout<<mod_pow(A,times,10)<<endl;
+    }
 }
